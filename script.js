@@ -43,7 +43,7 @@ btn.onclick = foo
 
 function foo(){
     let elems = document.querySelectorAll('td')
-    console.log(elems)
+    //console.log(elems)
     let random_value = Math.floor(Math.random() * 100)
     if (elems.length % 6 == 0){
         new_row = document.createElement('tr')
@@ -57,8 +57,6 @@ function foo(){
         }
     }
     else {
-        let x = (elems.length % 6)
-        console.log(x)
         new_cell = document.createElement('td')
         table.appendChild(new_cell)
         elems = document.querySelectorAll('td')
@@ -69,15 +67,3 @@ function foo(){
     }
 }
 
-    // let random_value = Math.floor(Math.random() * 100)
-    // var str = document.querySelector('#table');
-    // var add = str.insertRow(-1);
-    // //add.insertCell(0);
-    // var addTr = document.createElement("tr");
-    // var addTd = document.createElement("td");
-    // addTd.innerHTML=random_value;
-    // addTr.appendChild(addTd);
-    // str.appendChild(addTr);
-
-    // }
-    
