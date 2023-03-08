@@ -8,6 +8,7 @@ console.log(arr)
 
 
 let div_table = document.querySelector('#table');
+let div_button = document.querySelector('#button')
 
 for (let i = 0; i < 5; i++) {
 	
@@ -36,17 +37,47 @@ fill()
 
 let btn = document.createElement('button')
 btn.innerText = 'Добавить число'
-div_table.append(btn)
+div_button.appendChild(btn)
 
 btn.onclick = foo
 
 function foo(){
     let elems = document.querySelectorAll('td')
-    let random_index = Math.floor(Math.random() * elems.length)
+    console.log(elems)
     let random_value = Math.floor(Math.random() * 100)
-    elems[random_index].innerText = random_value
-    elems[random_index].style.backgroundColor = ''
-    if (random_value >= 50){
-        elems[random_index].style.backgroundColor = 'orange'
+    if (elems.length % 6 == 0){
+        new_row = document.createElement('tr')
+        table.appendChild(new_row)
+        new_cell = document.createElement('td')
+        table.appendChild(new_cell)
+        elems = document.querySelectorAll('td')
+        elems[elems.length-1].innerText = random_value
+        if (random_value >=50){
+            elems[elems.length-1].style.backgroundColor = "orange" 
+        }
+    }
+    else {
+        let x = (elems.length % 6)
+        console.log(x)
+        new_cell = document.createElement('td')
+        table.appendChild(new_cell)
+        elems = document.querySelectorAll('td')
+        elems[elems.length-1].innerText = random_value
+        if (random_value >=50){
+            elems[elems.length-1].style.backgroundColor = "orange" 
+        }
     }
 }
+
+    // let random_value = Math.floor(Math.random() * 100)
+    // var str = document.querySelector('#table');
+    // var add = str.insertRow(-1);
+    // //add.insertCell(0);
+    // var addTr = document.createElement("tr");
+    // var addTd = document.createElement("td");
+    // addTd.innerHTML=random_value;
+    // addTr.appendChild(addTd);
+    // str.appendChild(addTr);
+
+    // }
+    
